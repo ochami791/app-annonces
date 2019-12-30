@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Hello Description{% endblock %}
+
+{% block body %}
+
+<div class="col-12">
+    <div class="card bg-light">
+        <div class="card-body">
+            <h3>{{ annonce.title }}</h3>
+            <p>{{ annonce.price ~ '€' }}</p>
+            <h2 class="card-title">
+               <p> {{ 'Description' }}</p>
+            </h2>
+            <p> {{ annonce.description }}</p>
+            <h2>{{ 'Localisation' }}</h2>
+            <p>{{ annonce.author.areaCode ~ ' ' ~ annonce.author.location }}</p>
+        </div>
+    </div>
+{% endblock %}
+

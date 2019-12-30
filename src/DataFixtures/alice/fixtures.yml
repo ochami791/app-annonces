@@ -1,0 +1,28 @@
+App\Entity\User:
+  user_jack:
+    name: 'klein'
+    firstName: 'jack'
+    phone : '01-30-96-09-97'
+    email: 'kleinjack@mail.com'
+    plainPassword: '123'
+    location: 'Guyancourt'
+    areaCode: '78280'
+  user{1..20}:
+    name: <lastName()>
+    firstName : <firstName()>
+    phone: '01-30-96-09-97'
+    email: <email()>
+    plainPassword: '123'
+    location: 'Paris'
+    areaCode: '75010'
+
+App\Entity\Annonce:
+  annonce{1..100}:
+    title: <sentence(5,true)>
+    description: <paragraphs(3, true)>
+    price: <numberBetween(10, 1000)>
+    createdAt: <dateTimeThisYear('now')>
+    author: '@user*'
+
+
+
